@@ -30,9 +30,35 @@
             transition: all 0.3s ease;
         }
 
+        /* Stiluri pentru sigla mare și rotundă */
+        .logo-container {
+            width: 85px;
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 3px solid #15803d; /* Verdele brandului */
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+
         .logo-container img {
-            max-height: 50px;
-            width: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Secțiune suport cu aspect modern */
+        .support-accent {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-left: 8px solid #166534;
         }
     </style>
 </head>
@@ -41,131 +67,161 @@
     <!-- Navigație -->
     <nav class="fixed w-full z-50 glass-nav shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
+            <div class="flex justify-between h-24 items-center">
                 <!-- Logo Area -->
-                <div class="flex-shrink-0 flex items-center gap-3">
+                <div class="flex-shrink-0 flex items-center gap-4">
                     <div class="logo-container">
-                        <!-- Înlocuiește src cu link-ul logo-ului tău real -->
-                        <img src="1.png" alt="Logo ALTI-TRAIL ROMANIA" onerror="this.src='https://ui-avatars.com/api/?name=AT&background=15803d&color=fff'">
+                        <img src="1.png" alt="Logo ALTI-TRAIL ROMANIA" onerror="this.src='https://ui-avatars.com/api/?name=AT&background=15803d&color=fff&size=150'">
                     </div>
-                    <span class="text-xl font-extrabold tracking-tighter text-green-700 hidden sm:block">ALTI-TRAIL <span class="text-gray-800">ROMANIA</span></span>
+                    <div class="flex flex-col leading-tight hidden sm:block">
+                        <span class="text-xl font-extrabold tracking-tighter text-green-700">ALTI-TRAIL</span>
+                        <span class="text-lg font-bold text-gray-800">ROMANIA</span>
+                    </div>
                 </div>
 
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8 font-medium">
                         <a href="#acasa" class="hover:text-green-600 transition">Acasă</a>
                         <a href="#misiune" class="hover:text-green-600 transition">Misiune</a>
-                        <a href="#activitati" class="hover:text-green-600 transition">Activități</a>
-                        <a href="#contact" class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition">Alătură-te</a>
+                        <a href="#sustine" class="text-green-700 font-bold hover:text-green-900 transition underline decoration-2 underline-offset-4">Susține Viziunea</a>
+                        <a href="#contact" class="bg-green-600 text-white px-6 py-2.5 rounded-full hover:bg-green-700 transition shadow-md">Alătură-te</a>
                     </div>
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                        <i class="fas fa-bars text-3xl"></i>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 space-y-4">
-            <a href="#acasa" class="block font-medium">Acasă</a>
-            <a href="#misiune" class="block font-medium">Misiune</a>
-            <a href="#activitati" class="block font-medium">Activități</a>
-            <a href="#contact" class="block font-medium text-green-600">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 space-y-4 shadow-lg">
+            <a href="#acasa" class="block font-medium py-2">Acasă</a>
+            <a href="#misiune" class="block font-medium py-2">Misiune</a>
+            <a href="#sustine" class="block font-bold text-green-700 py-2">Susține Viziunea</a>
+            <a href="#contact" class="block font-medium text-green-600 py-2">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="acasa" class="hero-gradient h-screen flex items-center justify-center text-center text-white px-4">
-        <div class="max-w-4xl">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Pasiune pentru Munte și Alergare</h1>
-            <p class="text-xl md:text-2xl mb-10 opacity-90">Suntem o comunitate de entuziaști care explorează potecile Carpaților și promovează respectul pentru natură.</p>
+        <div class="max-w-4xl pt-20">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 italic tracking-tight uppercase">Depășește-ți Limitele</h1>
+            <p class="text-xl md:text-2xl mb-10 opacity-90 font-light">Ești gata pentru următoarea aventură? Construim împreună cea mai activă comunitate de Trail Running.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#activitati" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition shadow-lg">Descoperă ce facem</a>
-                <a href="#contact" class="bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg transition shadow-lg">Vino în grup</a>
+                <a href="#sustine" class="bg-white text-green-800 hover:bg-green-50 px-8 py-4 rounded-full font-bold text-lg transition shadow-lg flex items-center justify-center gap-2">
+                    Susține-ne <i class="fas fa-heart text-red-500"></i>
+                </a>
+                <a href="#contact" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-lg">Devino membru</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Noua Secțiune de Redirecționare 3.5% -->
+    <section id="sustine" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="support-accent rounded-3xl p-8 md:p-12 shadow-sm border border-green-100">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="lg:w-2/3">
+                        <span class="inline-block bg-green-200 text-green-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">Investește în Pasiunea Ta</span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">Ajută comunitatea ALTI-TRAIL să crească</h2>
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed italic">
+                            "Fiecare ieșire pe munte este mai frumoasă atunci când ai o comunitate puternică în spate. Redirecționarea celor 3,5% este gestul tău simbolic pentru a transforma planurile noastre în realitate."
+                        </p>
+                        <div class="grid sm:grid-cols-2 gap-6 mb-10">
+                            <div class="flex items-start gap-4">
+                                <div class="mt-1 bg-green-600 p-2 rounded-lg text-white">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Evenimente Membrabile</h4>
+                                    <p class="text-sm text-gray-600 italic">Organizarea de întâlniri și workshop-uri dedicate alergării montane.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="mt-1 bg-green-600 p-2 rounded-lg text-white">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900">Resurse de Grup</h4>
+                                    <p class="text-sm text-gray-600 italic">Investim în logistica necesară pentru ca antrenamentele noastre să fie sigure și profesioniste.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://LINK-CATRE-SITE-UL-TAU-DE-CERERI.ro" target="_blank" class="inline-flex items-center gap-3 bg-green-800 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-900 transition shadow-md group">
+                            Completează Cererea Rapid 
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition"></i>
+                        </a>
+                    </div>
+                    <div class="lg:w-1/3 text-center">
+                        <div class="relative inline-block">
+                            <div class="absolute inset-0 bg-green-400 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+                            <div class="relative bg-white p-10 rounded-full border-4 border-dashed border-green-300 flex flex-col items-center justify-center w-64 h-64 mx-auto">
+                                <span class="text-5xl font-black text-green-700">3,5%</span>
+                                <span class="text-sm text-gray-500 uppercase font-bold tracking-tighter">Din Impozit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Misiune -->
-    <section id="misiune" class="py-24 bg-white">
+    <section id="misiune" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Valorile Noastre</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 uppercase tracking-tighter">De ce existăm?</h2>
                 <div class="w-20 h-1 bg-green-600 mx-auto"></div>
             </div>
             
             <div class="grid md:grid-cols-3 gap-12">
-                <div class="text-center p-6 card-hover border border-gray-100 rounded-2xl shadow-sm">
-                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+                <div class="text-center p-8 card-hover border border-gray-100 rounded-3xl shadow-sm bg-white">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl rotate-3">
                         <i class="fas fa-mountain"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Spirit Comunitar</h3>
-                    <p class="text-gray-600">Suntem un grup de prieteni care împărtășesc experiențe montane și se susțin reciproc pe fiecare potecă.</p>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Spirit Comunitar</h3>
+                    <p class="text-gray-600 italic">Suntem un grup de prieteni care împărtășesc experiențe montane și se susțin reciproc pe fiecare potecă.</p>
                 </div>
-                <div class="text-center p-6 card-hover border border-gray-100 rounded-2xl shadow-sm">
-                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+                <div class="text-center p-8 card-hover border border-gray-100 rounded-3xl shadow-sm bg-white">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl -rotate-3">
                         <i class="fas fa-running"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Alergare Recreativă</h3>
-                    <p class="text-gray-600">Promovăm mișcarea în aer liber și bucuria de a alerga pe munte într-un cadru relaxat și amical.</p>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Alergare Recreativă</h3>
+                    <p class="text-gray-600 italic">Promovăm mișcarea în aer liber și bucuria de a alerga pe munte într-un cadru relaxat și amical.</p>
                 </div>
-                <div class="text-center p-6 card-hover border border-gray-100 rounded-2xl shadow-sm">
-                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
-                        <i class="fas fa-tree"></i>
+                <div class="text-center p-8 card-hover border border-gray-100 rounded-3xl shadow-sm bg-white">
+                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl rotate-6">
+                        <i class="fas fa-heart"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Protejarea Naturii</h3>
-                    <p class="text-gray-600">Acționăm prin voluntariat pentru menținerea curățeniei pe trasee și respectarea eticii montane.</p>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Pasiune Pură</h3>
+                    <p class="text-gray-600 italic">Fiecare kilometru parcurs este o celebrare a naturii și a sănătății noastre fizice și mentale.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Activități -->
+    <!-- Activități (Simplificat) -->
     <section id="activitati" class="py-24 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Activitățile Noastre</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Iată cum ne petrecem timpul în cadrul comunității ALTI-TRAIL ROMANIA.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Activitate 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-                    <img src="https://images.unsplash.com/photo-1517594422361-5eeb8ae275a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Iesire grup" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Ieșiri de Grup</h3>
-                        <p class="text-gray-600 text-sm mb-4">Ne întâlnim pentru a alerga împreună pe trasee accesibile, împărtășind pasiunea pentru mișcare în natură.</p>
-                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i> Atmosferă relaxată</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i> Suport între membri</li>
-                        </ul>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-12 uppercase tracking-tighter italic">Experiențele ALTI-TRAIL</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1517594422361-5eeb8ae275a9?auto=format&fit=crop&w=600&q=80" alt="[Alergare grup]" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <h3 class="text-white font-bold text-xl">Ieșiri de Grup</h3>
                     </div>
                 </div>
-
-                <!-- Activitate 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-                    <img src="https://images.unsplash.com/photo-1533512930330-4ac257c86793?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Intalniri membrii" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Întâlniri Amicale</h3>
-                        <p class="text-gray-600 text-sm mb-4">Discuții libere despre experiențe trecute, planuri de explorare și recomandări de echipament între pasionați.</p>
-                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i> Schimb de impresii</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i> Socializare</li>
-                        </ul>
+                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1533512930330-4ac257c86793?auto=format&fit=crop&w=600&q=80" alt="[Membri discutând]" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <h3 class="text-white font-bold text-xl">Întâlniri Amicale</h3>
                     </div>
                 </div>
-
-                <!-- Activitate 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover">
-                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Voluntariat" class="w-full h-56 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Acțiuni de Voluntariat</h3>
-                        <p class="text-gray-600 text-sm mb-4">Ieșiri dedicate curățării potecilor pe care alergăm, pentru a lăsa muntele mai curat decât l-am găsit.</p>
-                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i> Respect pentru mediu</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i> Implicare civică</li>
-                        </ul>
+                <div class="group relative overflow-hidden rounded-2xl h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="[Natură]" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <h3 class="text-white font-bold text-xl">Explorări Noi</h3>
                     </div>
                 </div>
             </div>
@@ -177,44 +233,34 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16">
                 <div>
-                    <h2 class="text-3xl font-bold mb-6">Contactează-ne</h2>
-                    <p class="text-gray-400 mb-8 text-lg">Vrei să afli când este următoarea ieșire de grup sau cum poți ajuta ca voluntar? Trimite-ne un semn.</p>
+                    <h2 class="text-3xl font-bold mb-6 italic">Contact</h2>
+                    <p class="text-gray-400 mb-8 font-light">Ești la un mesaj distanță de prima ta aventură cu noi.</p>
                     <form id="contact-form" class="space-y-4">
                         <div class="grid sm:grid-cols-2 gap-4">
-                            <input type="text" placeholder="Nume" required class="bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-green-500">
-                            <input type="email" placeholder="Email" required class="bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-green-500">
+                            <input type="text" placeholder="Nume" required class="bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 text-white">
+                            <input type="email" placeholder="Email" required class="bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 text-white">
                         </div>
-                        <textarea placeholder="Mesajul tău" rows="4" required class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-green-500"></textarea>
-                        <button type="submit" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-10 py-3 rounded-lg font-bold transition">Trimite Mesaj</button>
+                        <textarea placeholder="Ce planuri ai?" rows="4" required class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 text-white"></textarea>
+                        <button type="submit" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-10 py-3 rounded-full font-bold transition uppercase tracking-widest text-sm">Trimite Mesaj</button>
                     </form>
                     <div id="form-feedback" class="mt-4 hidden text-green-400 font-medium">
-                        Mulțumim! Mesajul tău a fost trimis către comunitate.
+                        Mulțumim! Te contactăm în curând.
                     </div>
                 </div>
                 
-                <div class="bg-gray-800 p-8 rounded-2xl">
-                    <h3 class="text-xl font-bold mb-8">Informații Utile</h3>
+                <div class="bg-gray-800/50 p-8 rounded-3xl border border-gray-700">
+                    <h3 class="text-xl font-bold mb-8 text-green-400 italic">Devino parte din poveste</h3>
+                    <p class="text-gray-300 mb-6 italic font-light">Orice susținere contează pentru a menține vie această comunitate.</p>
                     <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="text-green-500 mt-1 mr-4"><i class="fas fa-envelope text-xl"></i></div>
-                            <div>
-                                <p class="text-sm text-gray-400">Email Comunitate</p>
-                                <p class="font-medium">contact@altitrail.ro</p>
-                            </div>
+                        <div class="flex items-center">
+                            <div class="text-green-500 mr-4"><i class="fas fa-envelope"></i></div>
+                            <p class="font-medium text-gray-200 uppercase tracking-tighter">contact@altitrail.ro</p>
                         </div>
-                        <div class="flex items-start">
-                            <div class="text-green-500 mt-1 mr-4"><i class="fas fa-info-circle text-xl"></i></div>
-                            <div>
-                                <p class="text-sm text-gray-400">Alătură-te</p>
-                                <p class="font-medium">Urmărește-ne pe rețelele sociale</p>
-                            </div>
+                        <div class="flex space-x-6 mt-8">
+                            <a href="#" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-strava"></i></a>
                         </div>
-                    </div>
-                    
-                    <div class="mt-12 flex space-x-6">
-                        <a href="#" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-2xl text-gray-400 hover:text-white transition"><i class="fab fa-strava"></i></a>
                     </div>
                 </div>
             </div>
@@ -222,24 +268,17 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 bg-black text-center text-gray-500 text-xs uppercase tracking-widest">
-        <p>&copy; 2024 ALTI-TRAIL ROMANIA | Trail Running Community</p>
-        <p class="mt-2 text-[10px] opacity-50 italic">Suntem o asociație non-profit bazată pe voluntariat și pasiune amatoricească.</p>
+    <footer class="py-10 bg-black text-center text-gray-600 text-[10px] uppercase tracking-widest border-t border-gray-800">
+        <p>&copy; 2024 ALTI-TRAIL ROMANIA | Ne vedem pe potecă!</p>
     </footer>
 
     <script>
-        // Meniu Mobil
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // Formular
         const form = document.getElementById('contact-form');
         const feedback = document.getElementById('form-feedback');
-
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             form.reset();
